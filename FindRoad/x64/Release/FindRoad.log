@@ -1,0 +1,10 @@
+﻿  main.c
+  map.c
+  pathfinder.c
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+G:\StudyProject\C大\FindRoad\map.c(39): warning C4715: “What_Is”: 不是所有的控件路径都返回值
+G:\StudyProject\C大\FindRoad\map.c(58): warning C4172: 返回局部变量或临时变量的地址: temp_pos
+  All 17 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  FindRoad.vcxproj -> G:\StudyProject\C大\FindRoad\x64\Release\FindRoad.exe

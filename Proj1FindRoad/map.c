@@ -62,10 +62,6 @@ void Set_Footprint(Position_t pos) {
 	map.map_array[pos.y * map.col + pos.x] = '*';
 }
 
-void Erase_FootPrint(Position_t pos) {
-	map.map_array[pos.y * map.col + pos.x] = ' ';
-}
-
 void Mark_Wrong_Way(Position_t pos) {
 	map.map_array[pos.y * map.col + pos.x] = 'x';
 }

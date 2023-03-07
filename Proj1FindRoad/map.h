@@ -54,8 +54,6 @@ Position_t Get_Neigbor(Position_t pos, int direction);
 
 void Set_Footprint(Position_t pos);
 
-void Erase_FootPrint(Position_t pos);
-
 void Mark_Wrong_Way(Position_t pos);
 
 void Print_Map();

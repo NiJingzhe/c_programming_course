@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <memory.h>
 /*-----------------------Macro Definition----------------------*/
-#define RELEASE //if you want to run in debug mode, please change RELEASE to DEBUG
+#define DEBUG //if you want to run in debug mode, please change RELEASE to DEBUG
                 //and you can see more detailed solving process.
 
 //定义了各种地图要素，可以应对边缘墙体缺失的情况
@@ -48,9 +48,9 @@ Map_t map;
 /*---------------Public Function Declaration------------------*/
 void Init_Map();
 
-int What_Is(Position_t* pos);
+int What_Is(Position_t pos);
 
-Position_t* Get_Neigbor(Position_t* pos, int direction);
+Position_t Get_Neigbor(Position_t* pos, int direction);
 
 void Set_Footprint(Position_t* pos);
 

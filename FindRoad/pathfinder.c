@@ -25,7 +25,7 @@ void Init_Finder() {
 	}
 }
 
-void Find_Path(Map_t* map) {
+void Find_Path() {
 	for (int direction = UP; direction <= DOWN; direction++)
 		if (What_Is(Get_Neigbor(&current_position, direction)) == FINISH) {		
 			found_solution = 1;
@@ -35,7 +35,7 @@ void Find_Path(Map_t* map) {
 	int last_direction_ = last_direction;
 
 	if (What_Is(Get_Neigbor(&current_position, RIGHT)) == ROAD && !found_solution) {
-		current_position = *Get_Neigbor(&current_position, RIGHT);
+		current_position = Get_Neigbor(&current_position, RIGHT);
 		Set_Footprint(&current_position);
 		last_direction = RIGHT;
 #ifdef DEBUG
@@ -44,7 +44,7 @@ void Find_Path(Map_t* map) {
 		Find_Path(map);
 	}
 	if (What_Is(Get_Neigbor(&current_position, DOWN)) == ROAD && !found_solution) {
-		current_position = *Get_Neigbor(&current_position, DOWN);
+		current_position = Get_Neigbor(&current_position, DOWN);
 		Set_Footprint(&current_position);
 #ifdef DEBUG
 		Print_Map();
@@ -53,7 +53,7 @@ void Find_Path(Map_t* map) {
 		Find_Path(map);
 	}
 	if (What_Is(Get_Neigbor(&current_position, UP)) == ROAD && !found_solution) {
-		current_position = *Get_Neigbor(&current_position, UP);
+		current_position = Get_Neigbor(&current_position, UP);
 		Set_Footprint(&current_position);
 #ifdef DEBUG
 		Print_Map();
@@ -62,7 +62,7 @@ void Find_Path(Map_t* map) {
 		Find_Path(map);
 	}
 	if (What_Is(Get_Neigbor(&current_position, LEFT)) == ROAD && !found_solution) {
-		current_position = *Get_Neigbor(&current_position, LEFT);
+		current_position = Get_Neigbor(&current_position, LEFT);
 		Set_Footprint(&current_position);
 #ifdef DEBUG
 		Print_Map();
@@ -74,7 +74,7 @@ void Find_Path(Map_t* map) {
 	if (found_solution)
 		return;
 	
-	if (What_Is(&current_position) == START && last_direction_ != 0 && !found_solution) {
+	if (What_Is(current_position) == START && last_direction_ != 0 && !found_solution) {
 #ifdef DEBUG
 		printf("Step back to Start, no solution!\n");
 #endif
@@ -84,13 +84,11 @@ void Find_Path(Map_t* map) {
 
 	if (last_direction_ != 0) {
 		Mark_Wrong_Way(&current_position);
-		current_position = *Get_Neigbor(&current_position, 23-last_direction_);	
+		current_position = Get_Neigbor(&current_position, 23-last_direction_);	
 
 #ifdef DEBUG
-
 		printf("Marked one place as wrong way!\n");
 		Print_Map();
-
 #endif
 		return;
 	}

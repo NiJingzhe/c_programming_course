@@ -25,10 +25,10 @@ void Init_Map() {
 		
 }
 
-int What_Is(Position_t* pos) {
-	if (pos->y >= map.row || pos->y < 0 || pos->x >= map.col || pos->x < 0)
+int What_Is(Position_t pos) {
+	if (pos.y >= map.row || pos.y < 0 || pos.x >= map.col || pos.x < 0)
 		return VOID;
-	switch (map.map_array[pos->y * map.col + pos->x]) {
+	switch (map.map_array[pos.y * map.col + pos.x]) {
 		case '$': return START;
 		case ' ': return ROAD;
 		case '#': return WALL;
@@ -38,7 +38,7 @@ int What_Is(Position_t* pos) {
 	}
 }
 
-Position_t* Get_Neigbor(Position_t* pos, int direction) {
+Position_t Get_Neigbor(Position_t* pos, int direction) {
 	Position_t temp_pos = *pos;
 	switch (direction) {
 		case LEFT: {
@@ -55,7 +55,7 @@ Position_t* Get_Neigbor(Position_t* pos, int direction) {
 		}
 	}
 
-	return &temp_pos;
+	return temp_pos;
 }
 // x = 2 y = 2 in 5x5 array, index is 12 y*col+x
 void Set_Footprint(Position_t* pos) {

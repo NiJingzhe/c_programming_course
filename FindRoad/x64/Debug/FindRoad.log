@@ -1,4 +1,2 @@
-﻿  map.c
-G:\StudyProject\C大\FindRoad\map.c(39): warning C4715: “What_Is”: 不是所有的控件路径都返回值
-G:\StudyProject\C大\FindRoad\map.c(58): warning C4172: 返回局部变量或临时变量的地址: temp_pos
-  FindRoad.vcxproj -> G:\StudyProject\C大\FindRoad\x64\Debug\FindRoad.exe
+﻿  pathfinder.c
+  FindRoad.vcxproj -> G:\StudyProject\c_programming\FindRoad\x64\Debug\FindRoad.exe

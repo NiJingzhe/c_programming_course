@@ -9,7 +9,7 @@
 
 void Init_Map() {
 	int row, col;
-	scanf_s("%d %d", &row, &col);
+	scanf("%d %d", &row, &col);
 	getchar();
 	map.row = row;
 	map.col = col;
@@ -17,7 +17,7 @@ void Init_Map() {
 	memset(map.map_array, ' ', map.row * map.col * sizeof(char));
 	for (int i = 0; i < map.row; i++) {
 		for (int j = 0; j < map.col; j++)
-				scanf("%c", &((char)map.map_array[i * map.col + j]));
+				scanf("%c", &(map.map_array[i * map.col + j]));
 		getchar();
 	}
 	
@@ -38,8 +38,8 @@ int What_Is(Position_t pos) {
 	}
 }
 
-Position_t Get_Neigbor(Position_t* pos, int direction) {
-	Position_t temp_pos = *pos;
+Position_t Get_Neigbor(Position_t pos, int direction) {
+	Position_t temp_pos = pos;
 	switch (direction) {
 		case LEFT: {
 			temp_pos.x -= 1; break;
@@ -58,16 +58,16 @@ Position_t Get_Neigbor(Position_t* pos, int direction) {
 	return temp_pos;
 }
 // x = 2 y = 2 in 5x5 array, index is 12 y*col+x
-void Set_Footprint(Position_t* pos) {
-	map.map_array[pos->y * map.col + pos->x] = '*';
+void Set_Footprint(Position_t pos) {
+	map.map_array[pos.y * map.col + pos.x] = '*';
 }
 
-void Erase_FootPrint(Position_t* pos) {
-	map.map_array[pos->y * map.col + pos->x] = ' ';
+void Erase_FootPrint(Position_t pos) {
+	map.map_array[pos.y * map.col + pos.x] = ' ';
 }
 
-void Mark_Wrong_Way(Position_t* pos) {
-	map.map_array[pos->y * map.col + pos->x] = 'x';
+void Mark_Wrong_Way(Position_t pos) {
+	map.map_array[pos.y * map.col + pos.x] = 'x';
 }
 
 void Print_Path_On_Map() {

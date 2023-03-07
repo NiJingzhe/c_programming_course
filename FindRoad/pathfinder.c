@@ -12,6 +12,10 @@ extern Map_t map;
 int found_solution = 0;
 int last_direction = 0;
 
+#ifdef DEBUG
+int depth = 1;
+#endif
+
 void Init_Finder() {
 	current_position.x = 0;
 	current_position.y = 0;
@@ -26,44 +30,48 @@ void Init_Finder() {
 }
 
 void Find_Path() {
+#ifdef DEBUG
+	depth++;
+	printf("\nReached %d layers\n", depth);
+#endif
 	for (int direction = UP; direction <= DOWN; direction++)
-		if (What_Is(Get_Neigbor(&current_position, direction)) == FINISH) {		
+		if (What_Is(Get_Neigbor(current_position, direction)) == FINISH) {		
 			found_solution = 1;
 			return;
 		}
 
 	int last_direction_ = last_direction;
 
-	if (What_Is(Get_Neigbor(&current_position, RIGHT)) == ROAD && !found_solution) {
-		current_position = Get_Neigbor(&current_position, RIGHT);
-		Set_Footprint(&current_position);
+	if (What_Is(Get_Neigbor(current_position, RIGHT)) == ROAD && !found_solution) {
+		current_position = Get_Neigbor(current_position, RIGHT);
+		Set_Footprint(current_position);
 		last_direction = RIGHT;
 #ifdef DEBUG
 		Print_Map();
 #endif
 		Find_Path(map);
 	}
-	if (What_Is(Get_Neigbor(&current_position, DOWN)) == ROAD && !found_solution) {
-		current_position = Get_Neigbor(&current_position, DOWN);
-		Set_Footprint(&current_position);
+	if (What_Is(Get_Neigbor(current_position, DOWN)) == ROAD && !found_solution) {
+		current_position = Get_Neigbor(current_position, DOWN);
+		Set_Footprint(current_position);
 #ifdef DEBUG
 		Print_Map();
 #endif
 		last_direction = DOWN;
 		Find_Path(map);
 	}
-	if (What_Is(Get_Neigbor(&current_position, UP)) == ROAD && !found_solution) {
-		current_position = Get_Neigbor(&current_position, UP);
-		Set_Footprint(&current_position);
+	if (What_Is(Get_Neigbor(current_position, UP)) == ROAD && !found_solution) {
+		current_position = Get_Neigbor(current_position, UP);
+		Set_Footprint(current_position);
 #ifdef DEBUG
 		Print_Map();
 #endif
 		last_direction = UP;
 		Find_Path(map);
 	}
-	if (What_Is(Get_Neigbor(&current_position, LEFT)) == ROAD && !found_solution) {
-		current_position = Get_Neigbor(&current_position, LEFT);
-		Set_Footprint(&current_position);
+	if (What_Is(Get_Neigbor(current_position, LEFT)) == ROAD && !found_solution) {
+		current_position = Get_Neigbor(current_position, LEFT);
+		Set_Footprint(current_position);
 #ifdef DEBUG
 		Print_Map();
 #endif
@@ -83,8 +91,8 @@ void Find_Path() {
 		
 
 	if (last_direction_ != 0) {
-		Mark_Wrong_Way(&current_position);
-		current_position = Get_Neigbor(&current_position, 23-last_direction_);	
+		Mark_Wrong_Way(current_position);
+		current_position = Get_Neigbor(current_position, 23-last_direction_);	
 
 #ifdef DEBUG
 		printf("Marked one place as wrong way!\n");

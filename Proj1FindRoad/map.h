@@ -8,8 +8,7 @@
 #ifndef __MAP_H__
 #define __MAP_H__
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdlib.h>
-#include <memory.h>
+
 /*-----------------------Macro Definition----------------------*/
 #define RELEASE //if you want to run in debug mode, please change RELEASE to DEBUG
                 //and you can see more detailed solving process.
@@ -56,7 +55,9 @@ void Set_Footprint(Position_t pos);
 
 void Mark_Wrong_Way(Position_t pos);
 
+#ifdef DEBUG
 void Print_Map();
+#endif
 
 void Print_Path_On_Map();
 #endif

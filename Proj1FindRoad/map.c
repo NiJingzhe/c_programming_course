@@ -6,7 +6,13 @@
 
 #include "map.h"
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <memory.h>
+/*
+ @ param: None
+ @ return: None
+ @ brief: 读入地图
+*/
 void Init_Map() {
 	int row, col;
 	scanf("%d %d", &row, &col);
@@ -20,11 +26,14 @@ void Init_Map() {
 				scanf("%c", &(map.map_array[i * map.col + j]));
 		getchar();
 	}
-	
-	//Print_Map();
 		
 }
 
+/*
+ @ param: Position_t pos
+ @ return: int
+ @ brief: 返回给定位置上的地图要素(START/ROAD/WALL/FINISH/FOOTPRINT/WRONGWAY)
+*/
 int What_Is(Position_t pos) {
 	if (pos.y >= map.row || pos.y < 0 || pos.x >= map.col || pos.x < 0)
 		return VOID;
@@ -38,6 +47,11 @@ int What_Is(Position_t pos) {
 	}
 }
 
+/*
+ @ param: Position_t pos, int direction
+ @ return: Position_t
+ @ brief: 返回给定位置向direction移动一格后的位置结构体
+*/
 Position_t Get_Neigbor(Position_t pos, int direction) {
 	Position_t temp_pos = pos;
 	switch (direction) {
@@ -57,15 +71,30 @@ Position_t Get_Neigbor(Position_t pos, int direction) {
 
 	return temp_pos;
 }
-// x = 2 y = 2 in 5x5 array, index is 12 y*col+x
+
+/*
+ @ param: Position_t pos
+ @ return: None
+ @ brief: 在map的给定位置上绘制足迹('*')
+*/
 void Set_Footprint(Position_t pos) {
 	map.map_array[pos.y * map.col + pos.x] = '*';
 }
 
+/*
+ @ param: Position_t pos
+ @ return: None
+ @ brief: 在map的给定位置上绘制错路标记('x')
+*/
 void Mark_Wrong_Way(Position_t pos) {
 	map.map_array[pos.y * map.col + pos.x] = 'x';
 }
 
+/*
+ @ param: None
+ @ return: None
+ @ brief: 打印只包含足迹的地图
+*/
 void Print_Path_On_Map() {
 	printf("\nSolution:\n");
 	for (int i = 0; i < map.col * map.row; i++) {
@@ -78,7 +107,11 @@ void Print_Path_On_Map() {
 }
 
 #ifdef DEBUG
-
+/*
+ @ param: None
+ @ return: None
+ @ brief: 打印全部的地图，包括错路标记、足迹等
+*/
 void Print_Map() {
 	printf("\n\n");
 	for (int i = 0; i < map.col * map.row; i++) {

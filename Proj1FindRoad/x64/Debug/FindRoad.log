@@ -1,2 +1,6 @@
-﻿  pathfinder.c
-  FindRoad.vcxproj -> G:\StudyProject\c_programming\FindRoad\x64\Debug\FindRoad.exe
+﻿  main.c
+  map.c
+  pathfinder.c
+  正在生成代码...
+G:\StudyProject\c_programming\Proj1FindRoad\map.c(48): warning C4715: “What_Is”: 不是所有的控件路径都返回值
+  FindRoad.vcxproj -> G:\StudyProject\c_programming\Proj1FindRoad\x64\Debug\FindRoad.exe

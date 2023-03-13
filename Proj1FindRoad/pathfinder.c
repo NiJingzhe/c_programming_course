@@ -63,12 +63,12 @@ void Find_Path() {
 		//绘制足迹
 		Set_Footprint(current_position);
 		//更新探路方向
-		last_direction = RIGHT;
 #ifdef DEBUG
 		Print_Map();
 #endif
 		//进入下一层
-		Find_Path(map);
+		last_direction = RIGHT;
+		Find_Path();
 	}
 	if (What_Is(Get_Neigbor(current_position, DOWN)) == ROAD && !found_solution) {
 		current_position = Get_Neigbor(current_position, DOWN);
@@ -77,7 +77,7 @@ void Find_Path() {
 		Print_Map();
 #endif
 		last_direction = DOWN;
-		Find_Path(map);
+		Find_Path();
 	}
 	if (What_Is(Get_Neigbor(current_position, UP)) == ROAD && !found_solution) {
 		current_position = Get_Neigbor(current_position, UP);
@@ -86,7 +86,7 @@ void Find_Path() {
 		Print_Map();
 #endif
 		last_direction = UP;
-		Find_Path(map);
+		Find_Path();
 	}
 	if (What_Is(Get_Neigbor(current_position, LEFT)) == ROAD && !found_solution) {
 		current_position = Get_Neigbor(current_position, LEFT);
@@ -95,7 +95,7 @@ void Find_Path() {
 		Print_Map();
 #endif
 		last_direction = LEFT;
-		Find_Path(map);
+		Find_Path();
 	}
 
 	//如果四个方向都走不了了就会到这里

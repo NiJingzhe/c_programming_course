@@ -1,0 +1,1 @@
+G:\StudyProject\c_programming\BrainFuckCompiler\x64\Debug\BrainFuckCompiler.exe

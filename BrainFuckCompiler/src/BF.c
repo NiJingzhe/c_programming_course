@@ -22,17 +22,28 @@ int main(int argc, char* argv[]) {
 	if (argc == 6 || argc == 5) {
 		if (strcmp(argv[1], "-s") == 0 && strcmp(argv[3], "-o") == 0) {
 			char* source_path = (char*)malloc((strlen(argv[2]) + 1) * sizeof(char));
-			char* middle_path = (char*)malloc((strlen(argv[2]) + 1) * sizeof(char));
+			char* middle_path = (char*)malloc((strlen(argv[2]) + 15) * sizeof(char));
 			char* target_path = (char*)malloc((strlen(argv[4]) + 1) * sizeof(char));
 			char* mode = argc == 5 ? "-dm" : argv[5];
-			//printf("%s", mode);
 			strcpy(source_path, argv[2]);
 			strcpy(middle_path, argv[2]);
 			strcpy(target_path, argv[4]);
 			int i;
-			for (i = strlen(middle_path); middle_path[i] != '/' && middle_path[i] != '\\'; --i);
-			middle_path[i+1] = '\0';
-			strcat(middle_path, "middle.c");
+			for (i = strlen(middle_path); middle_path[i] != '/' && middle_path[i] != '\\' && i > 0; --i);
+			if (i == 0) {
+#ifdef LINUX
+				char head[1024] = "./";
+#endif
+#ifdef WIN
+				char head[1024] = ".\\";
+#endif
+				strcat(head, "middle.c");
+				strcpy(middle_path, head);
+			}
+			else {
+				middle_path[i+1] = '\0';
+				strcat(middle_path, "middle.c");
+			}	
 			//strcat(target_path, argv[4]);
 			if (Compile(source_path, middle_path, target_path, mode) < 0) {
 				printf("\n\nPLEASE CHECK YOUR ARGUMENTS AND TRY AGAIN.\n");

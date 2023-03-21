@@ -7,5 +7,3 @@ Release/
 out/
 CMakePresets.json
 CMakeCache.txt
-*.swp
-src/*.swp

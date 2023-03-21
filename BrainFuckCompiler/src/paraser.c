@@ -14,7 +14,7 @@ char* translate(char c)
         case '-':
             return "cur->val-=1;\n";
         case '.':
-            return "printf(\"%c\", cur->val);\n";
+            return "putchar(cur->val);\n";
         case ',':
             return "cur->val=getchar();\n";
         case '[':

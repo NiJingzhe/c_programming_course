@@ -1,2 +1,2 @@
 #define RELEASE
-#define LINUX
+#define WIN

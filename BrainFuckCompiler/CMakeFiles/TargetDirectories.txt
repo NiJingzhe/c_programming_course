@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/project/c_programming/BrainFuckCompiler/CMakeFiles/bf.dir
+/data/data/com.termux/files/home/project/c_programming/BrainFuckCompiler/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/project/c_programming/BrainFuckCompiler/CMakeFiles/rebuild_cache.dir

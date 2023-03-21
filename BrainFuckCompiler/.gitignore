@@ -2,4 +2,8 @@ x64/
 .vs/
 BF.dir/
 CMakeFiles/
+Debug/
+Release/
+out/
+CMakePresets.json
 CMakeCache.txt

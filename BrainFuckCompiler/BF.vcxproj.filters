@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\BF.c">
+    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\src\BF.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\paraser.c">
+    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\src\compiler.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\compiler.c">
+    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\src\paraser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,5 @@
-#include "compiler.h"
-#include "paraser.h"
+#include "headers/compiler.h"
+#include "headers/paraser.h"
 #include <stdlib.h>
 #include <string.h>
 

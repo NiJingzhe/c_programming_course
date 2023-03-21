@@ -1,2 +1,0 @@
-G:\StudyProject\C大\FindRoad\x64\Release\FindRoad.exe
-G:\StudyProject\c_programming\FindRoad\x64\Release\FindRoad.exe

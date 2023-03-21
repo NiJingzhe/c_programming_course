@@ -1,14 +1,25 @@
 <!--
  * @Author: ni-jingzhe 1448976235@qq.com
- * @Date: 2023-03-21 15:20:31
+ * @Date: 2023-03-07 16:33:29
  * @LastEditors: ni-jingzhe 1448976235@qq.com
- * @LastEditTime: 2023-03-21 15:24:50
- * @FilePath: \undefinedg:\StudyProject\c_programming\BrainFuckCompiler\README.md
+ * @LastEditTime: 2023-03-07 16:42:37
+ * @FilePath: \undefinedg:\StudyProject\c_programming\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-# 项目说明
----
-进入项目文件夹后首先需要删除`CMakeCache.txt`然后`cmake .`重新生成`Makefile`文件
-在`build_control.h`中，修改`LINUX`或`WIN`控制编译为适用于`bash(包括powershell)`或`DOS`的编译器。
+# **C大代码作业仓库**
+-----
+### tips：本仓库收录了陈建海老师的C语言程序设计专题的各次代码作业内容，包括PTA上的程序题和综合小项目实践
+### tips：本仓库内的所有代码均独立编写，并设置GPL3.0证书。代码内容仅供参考
 
-目前`Release`文件夹中包括一个适用于`DOS`的编译器(.exe后缀的)和一个适用于`bash(包括powershell)`的编译器
+-----
+
+##  一、内容说明
+
+- `day0x`文件夹内为第`x`次课程后留下的PTA作业内容
+- 小项目将会以`Proj[x]xxxx`的形式命名，如`Proj1FindRoad`
+
+## 二、参与贡献
+- 参与本仓库的贡献可以通过Fork本仓库并基于本仓库的文件结构添加相应文件，后发起pull request，请附有测试数据和结果
+- 欢迎诸位看到这个仓库的大佬门来修bug或者添加更多新内容啦
+
+

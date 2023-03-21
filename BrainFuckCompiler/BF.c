@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[]) {
 	if (argc == 1) {
-		printf("no arguments provided, please type bf -h to see help\n");
+		printf("no arguments provided, please type BF -h to see help\n");
 		return 0;
 	}
 	if (argc == 2) {

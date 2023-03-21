@@ -47,7 +47,7 @@ int Generate_Excutable(const char* mid_path, const char* target_name, const char
 	char* mid_path_copy = (char*)malloc(sizeof(char)*2048);
 	strcpy(mid_path_copy, mid_path);
 	system(strcat(gcc, strcat(mid_path_copy, strcat(o, target_name))));
-	if (!strcmp(mode, "-km") == 0)
+	if (!(strcmp(mode, "-km") == 0))
 		system(strcat(del, mid_path));
 	return 0;
 }

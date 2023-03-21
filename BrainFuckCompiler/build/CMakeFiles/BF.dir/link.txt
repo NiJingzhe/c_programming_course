@@ -1,0 +1,1 @@
+/usr/bin/gcc -g -rdynamic CMakeFiles/BF.dir/BF.c.o CMakeFiles/BF.dir/paraser.c.o CMakeFiles/BF.dir/compiler.c.o -o BF 

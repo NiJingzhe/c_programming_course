@@ -1,0 +1,3 @@
+/home/lild/Project/c_programming/BrainFuckCompiler/build/CMakeFiles/BF.dir
+/home/lild/Project/c_programming/BrainFuckCompiler/build/CMakeFiles/edit_cache.dir
+/home/lild/Project/c_programming/BrainFuckCompiler/build/CMakeFiles/rebuild_cache.dir

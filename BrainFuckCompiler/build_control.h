@@ -1,0 +1,2 @@
+#define RELEASE
+#define LINUX

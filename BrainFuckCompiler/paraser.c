@@ -1,59 +1,49 @@
 #include "paraser.h"
 #include <string.h>
+#include <stdlib.h>
 
 char* translate(char c)
 {
     switch (c) {
         case '>':
-            return "p++;";
+            return "p++;\n";
         case '<':
-            return "p--;";
+            return "p--;\n";
         case '+':
-            return "*p = *p + 1;";
+            return "*p = *p + 1;\n";
         case '-':
-            return "*p = *p - 1;";
+            return "*p = *p - 1;\n";
         case '.':
-            return "putchar(*p);";
+            return "putchar(*p);\n";
         case ',':
-            return "*p=getchar();";
+            return "*p=getchar();\n";
         case '[':
-            return "while(*p){";
+            return "while(*p){\n";
         case ']':
-            return "}";
+            return "}\n";
         default:
             return "";
     }
 }
 
-void paraser(char* content, char* c_lang) {
-#ifdef DEBUG
-	printf("calc the length of content....\n");
-#endif
+void paraser(char* content, char** c_lang) {
+
     long length = strlen(content);
-#ifdef DEBUG
-	printf("content has length of: %ld\n", length);
-#endif
-    c_lang = (char*)malloc(512*sizeof(char));
-    c_lang = "#include <stdio.h>\n#include<stdlib.h>\nint main(void){\n";
-#ifdef DEBUG
-	printf("init c_lang to:\n %s\n", c_lang);
-#endif
+
+    *c_lang = (char*)malloc(512*sizeof(char));
+    memset(*c_lang, 0, sizeof(char)*512);
+    strcat(*c_lang, "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\nint main(void){\n\tchar* p = (char*)malloc(sizeof(char)*2048);\nmemset(p, 0, sizeof(char)*2048);\n");
+
     for (int i = 0; i <= length; ++i) {
-#ifdef DEBUG
-	printf("reading char is: %c\n", content[i]);
-#endif
         char* translate_temp = translate(content[i]);
-#ifdef DEBUG
-	printf("after translation it become: %s\n", translate_temp);
-#endif
-        c_lang = (char*)realloc(c_lang, (2 + strlen(c_lang) + strlen(translate_temp))*sizeof(char));
-        strcat(c_lang, translate_temp);
-#ifdef DEBUG
-	printf("after adding new sentence, c_lang is: %s\n\n", c_lang);
-#endif
+        *c_lang = (char*)realloc((char*)*c_lang, (2 + strlen(*c_lang) + strlen(translate_temp))*sizeof(char));
+        strcat(*c_lang, translate_temp);
         translate_temp = "";
     }
-    c_lang = (char*)realloc(c_lang, (2 + strlen(c_lang) + strlen("return 0;\n}")*sizeof(char)));
-    strcat(c_lang, "return 0;\n}");
+    *c_lang = (char*)realloc((char*)*c_lang, (2 + strlen(*c_lang) + strlen("return 0;\n}")*sizeof(char)));
+    strcat(*c_lang, "return 0;\n}");
+#ifdef DEBUG
+	printf("after adding new sentence, c_lang is: %s\n\n", *c_lang);
+#endif
     return;
 }

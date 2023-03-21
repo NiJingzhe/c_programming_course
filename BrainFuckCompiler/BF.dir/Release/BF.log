@@ -1,6 +1,0 @@
-﻿  paraser.c
-G:\StudyProject\c_programming\BrainFuckCompiler\paraser.c(35,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-G:\StudyProject\c_programming\BrainFuckCompiler\paraser.c(49,9): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-G:\StudyProject\c_programming\BrainFuckCompiler\paraser.c(53,5): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-G:\StudyProject\c_programming\BrainFuckCompiler\paraser.c(31,19): warning C4267: “初始化”: 从“size_t”转换到“long”，可能丢失数据
-  BF.vcxproj -> G:\StudyProject\c_programming\BrainFuckCompiler\Release\BF.exe

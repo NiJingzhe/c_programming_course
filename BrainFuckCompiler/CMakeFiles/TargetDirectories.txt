@@ -1,3 +1,0 @@
-G:/StudyProject/c_programming/BrainFuckCompiler/CMakeFiles/BF.dir
-G:/StudyProject/c_programming/BrainFuckCompiler/CMakeFiles/ALL_BUILD.dir
-G:/StudyProject/c_programming/BrainFuckCompiler/CMakeFiles/ZERO_CHECK.dir

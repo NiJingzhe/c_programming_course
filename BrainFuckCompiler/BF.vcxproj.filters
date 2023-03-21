@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\BF.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\paraser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="G:\StudyProject\c_programming\BrainFuckCompiler\compiler.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="G:\StudyProject\c_programming\BrainFuckCompiler\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CDCEF3E0-CCF8-3971-B463-D9BB45FCB01E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 			char* middle_path = (char*)malloc((strlen(argv[2]) + 1) * sizeof(char));
 			char* target_path = (char*)malloc((strlen(argv[4]) + 1) * sizeof(char));
 			char* mode = argc == 5 ? "-dm" : argv[5];
-			printf("%s", mode);
+			//printf("%s", mode);
 			strcpy(source_path, argv[2]);
 			strcpy(middle_path, argv[2]);
 			strcpy(target_path, argv[4]);
